@@ -4,6 +4,9 @@ import { pgTable, text, numeric, timestamp, serial, varchar, jsonb } from "drizz
 import ws from "ws";
 import { randomUUID } from "crypto";
 
+// Specify Node.js runtime for Vercel (required for ws package)
+export const runtime = 'nodejs';
+
 neonConfig.webSocketConstructor = ws;
 
 const iaObjects = pgTable("ia_objects", {
